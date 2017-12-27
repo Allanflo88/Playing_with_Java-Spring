@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<!-- Instantiate only one bean for each object, no matter how many requests are made -->
+	<!-- <bean id="helloworld" class="com.allan.HelloWorld" scope="singleton">
+
+	</bean> -->
+	
+	<!-- Instantiate one bean for each request for the object -->
+	<!-- <bean id="helloworld" class="com.allan.HelloWorld" scope="prototype">
+
+	</bean>  -->
+	
+	<!-- Instantiate a bean with init and destroy methods-->
+	<bean id="helloworld" class="com.allan.HelloWorld" init-method="init" destroy-method="destroy">
+		<property name="msg" value="hello world!!!"/>
+	</bean>
+
+</beans>

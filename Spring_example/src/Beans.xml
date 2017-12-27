@@ -18,5 +18,6 @@
 	<bean id="helloworld" class="com.allan.HelloWorld" init-method="init" destroy-method="destroy">
 		<property name="msg" value="hello world!!!"/>
 	</bean>
+	<bean class="com.allan.InitHelloWorld"></bean>
 
 </beans>

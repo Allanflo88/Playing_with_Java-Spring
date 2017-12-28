@@ -7,24 +7,38 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Main {
 	public static void main(String[] args) {
 		
-		//Example used to understand the difference bettween singleton scope and prototype scope
-		
+		//Example used to understand the difference between singleton scope and prototype scope
 		/*
 		ApplicationContext context =  new ClassPathXmlApplicationContext("Beans.xml");
-		HelloWorld objA = (HelloWorld) context.getBean("helloworld");
+		HelloWorld objA = (HelloWorld) context.getBean("helloWorld");
 		
-		objA.setMsg("I'm object A!!!");
+		objA.setMsg1(msg);("I'm object A!!!");
 		objA.getMsg();
 		
-		HelloWorld objB = (HelloWorld) context.getBean("helloworld");
+		HelloWorld objB = (HelloWorld) context.getBean("helloWorld");
 		objB.getMsg();
 		*/
-		
+		//Example used to understand bean life cycle and post process
+		/*
 		AbstractApplicationContext context =  new ClassPathXmlApplicationContext("Beans.xml");
 		HelloWorld obj = (HelloWorld) context.getBean("helloworld");
 
-		obj.getMsg();
+		obj.getMsg1();
 		context.registerShutdownHook();
+		*/
+		
+		// Example used to understand bean definition inheritance
+		ApplicationContext context =  new ClassPathXmlApplicationContext("Beans.xml");
+		HelloWorld objA = (HelloWorld) context.getBean("helloWorld");
+		
+		objA.getMsg1();
+		objA.getMsg2();
+		
+		HelloBrasil objB = (HelloBrasil) context.getBean("helloBrasil");
+		objB.getMsg1();
+		objB.getMsg2();
+		objB.getMsg3();
+		
 	}
 
 }
